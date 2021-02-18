@@ -574,6 +574,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "borrow-graph"
+version = "0.0.1"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "mirai-annotations",
+]
+
+[[package]]
 name = "bs58"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1358,6 +1366,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "fail"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3be3c61c59fdc91f5dbc3ea31ee8623122ce80057058be560654c5d410d181a6"
+dependencies = [
+ "lazy_static",
+ "log",
+ "rand 0.7.3",
+]
+
+[[package]]
 name = "failure"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1451,6 +1470,12 @@ name = "fixedbitset"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "37ab347416e802de484e4d03c7316c48f1ecb56574dfd4a46a80f173ce1de04d"
+
+[[package]]
+name = "fixedbitset"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45e780567ed7abc415d12fd464571d265eb4a5710ddc97cdb1a31a4c35bb479d"
 
 [[package]]
 name = "flate2"
@@ -3381,6 +3406,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "mirai-annotations"
+version = "1.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b48e78b8626927bd980dff38d8147006323f5d7634d7bc9e31c3a59e07da1b28"
+
+[[package]]
 name = "more-asserts"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3519,6 +3550,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "nopetgraph"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2cf347ce02ca6b8681b16571eccd4f3ca61bea0c52d7249ddba4248750d3abf9"
+dependencies = [
+ "fixedbitset 0.3.2",
+ "indexmap",
+ "serde",
+ "twox-hash",
+]
+
+[[package]]
 name = "num-bigint"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3596,6 +3639,118 @@ name = "object"
 version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a9a7ab5d64814df0fe4a4b5ead45ed6c5f181ee3ff04ba344313a6c80446c5d4"
+
+[[package]]
+name = "omv"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "omv-bytecode-verifier",
+ "omv-core",
+ "omv-natives",
+ "omv-runtime",
+ "omv-types",
+]
+
+[[package]]
+name = "omv-bytecode-verifier"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "anyhow",
+ "borrow-graph",
+ "mirai-annotations",
+ "nopetgraph",
+ "omv-core",
+ "omv-primitives",
+]
+
+[[package]]
+name = "omv-core"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "anyhow",
+ "mirai-annotations",
+ "omv-io",
+ "omv-primitives",
+ "ref-cast",
+]
+
+[[package]]
+name = "omv-io"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+
+[[package]]
+name = "omv-natives"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "mirai-annotations",
+ "omv-core",
+ "omv-primitives",
+ "omv-types",
+ "once_cell",
+ "sha2 0.9.3",
+ "smallvec 1.6.1",
+]
+
+[[package]]
+name = "omv-primitives"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "anyhow",
+ "hex",
+ "mirai-annotations",
+ "omv-serialize",
+ "rand 0.8.3",
+ "ref-cast",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "omv-runtime"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "fail",
+ "funty",
+ "log",
+ "mirai-annotations",
+ "omv-bytecode-verifier",
+ "omv-core",
+ "omv-natives",
+ "omv-primitives",
+ "omv-types",
+ "once_cell",
+ "sha3",
+]
+
+[[package]]
+name = "omv-serialize"
+version = "0.1.2"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "omv-io",
+ "serde",
+]
+
+[[package]]
+name = "omv-types"
+version = "0.1.0"
+source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+dependencies = [
+ "mirai-annotations",
+ "omv-core",
+ "omv-primitives",
+ "omv-serialize",
+ "serde",
+ "sha2 0.9.3",
+ "smallvec 1.6.1",
+]
 
 [[package]]
 name = "once_cell"
@@ -3781,11 +3936,13 @@ version = "2.0.0"
 dependencies = [
  "frame-support",
  "frame-system",
+ "omv",
  "parity-scale-codec",
  "serde",
  "sp-core",
  "sp-io",
  "sp-runtime",
+ "sp-std",
 ]
 
 [[package]]
@@ -4239,7 +4396,7 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "467d164a6de56270bd7c4d070df81d07beace25012d5103ced4e9ff08d6afdb7"
 dependencies = [
- "fixedbitset",
+ "fixedbitset 0.2.0",
  "indexmap",
 ]
 
@@ -6033,6 +6190,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "92d5161132722baa40d802cc70b15262b98258453e85e5d1d365c757c73869ae"
 dependencies = [
  "serde_derive",
+]
+
+[[package]]
+name = "serde_bytes"
+version = "0.11.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "16ae07dd2f88a366f15bd0632ba725227018c69a1c8550a927324f8eb8368bb9"
+dependencies = [
+ "serde",
 ]
 
 [[package]]
