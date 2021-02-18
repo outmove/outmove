@@ -576,7 +576,7 @@ dependencies = [
 [[package]]
 name = "borrow-graph"
 version = "0.0.1"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "mirai-annotations",
 ]
@@ -3643,19 +3643,21 @@ checksum = "a9a7ab5d64814df0fe4a4b5ead45ed6c5f181ee3ff04ba344313a6c80446c5d4"
 [[package]]
 name = "omv"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "omv-bytecode-verifier",
  "omv-core",
  "omv-natives",
+ "omv-primitives",
  "omv-runtime",
+ "omv-serialize",
  "omv-types",
 ]
 
 [[package]]
 name = "omv-bytecode-verifier"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "anyhow",
  "borrow-graph",
@@ -3668,7 +3670,7 @@ dependencies = [
 [[package]]
 name = "omv-core"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "anyhow",
  "mirai-annotations",
@@ -3680,12 +3682,12 @@ dependencies = [
 [[package]]
 name = "omv-io"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 
 [[package]]
 name = "omv-natives"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "mirai-annotations",
  "omv-core",
@@ -3699,7 +3701,7 @@ dependencies = [
 [[package]]
 name = "omv-primitives"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "anyhow",
  "hex",
@@ -3714,7 +3716,7 @@ dependencies = [
 [[package]]
 name = "omv-runtime"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "fail",
  "funty",
@@ -3732,7 +3734,7 @@ dependencies = [
 [[package]]
 name = "omv-serialize"
 version = "0.1.2"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "omv-io",
  "serde",
@@ -3741,7 +3743,7 @@ dependencies = [
 [[package]]
 name = "omv-types"
 version = "0.1.0"
-source = "git+https://github.com/outmove/omv#f9413b0f87bf8805948c4d5030796c47231a4bda"
+source = "git+https://github.com/outmove/omv#8d3cf9d6f1630bb28653cf34a997eed70dcd99dd"
 dependencies = [
  "mirai-annotations",
  "omv-core",
